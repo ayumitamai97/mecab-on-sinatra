@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 gem "sinatra"
 gem "sinatra-contrib"
-gem "mecab"
+gem "mecab", "0.996"
 gem "natto"
-gem "pry-debugger"
+gem "pry"
