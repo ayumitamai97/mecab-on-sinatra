@@ -25,11 +25,5 @@ post "/complete" do
     @results[surface] = nattos.count(surface)
   end
 
-#   @outputs = []
-
-#  results.keys.each do |key|
-#    @outputs << key + " => " + results[key].to_s
-#  end
-
   erb :complete
 end
