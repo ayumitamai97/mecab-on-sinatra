@@ -16,7 +16,7 @@ post "/complete" do
   nattos = []
 
   natto.parse(@text) do |n|
-    nattos << n.surface
+    nattos << n.surface if n.feature.match("名詞") #|| n.feature.match("動詞")
   end
 
   @results = {}
