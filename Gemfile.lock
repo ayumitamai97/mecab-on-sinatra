@@ -47,6 +47,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bundler (= 1.16.2)
   mecab (= 0.996)
   natto
   pry

@@ -1,4 +1,5 @@
 source "https://rubygems.org"
+gem "bundler", "1.16.2"
 gem "sinatra"
 gem "sinatra-contrib"
 gem "mecab", "0.996"
