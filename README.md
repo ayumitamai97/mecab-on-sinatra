@@ -12,3 +12,9 @@
   $ gem which mecab 
   /app/vendor/bundle/ruby/2.4.0/gems/mecab-0.996/lib/mecab.so
   ```
+  - また、
+  ```
+  $ ls /app/vendor/mecab/lib
+  libmecab.a  libmecab.la  libmecab.so  libmecab.so.2  libmecab.so.2.0.0	mecab
+  ```
+  むむ。。
