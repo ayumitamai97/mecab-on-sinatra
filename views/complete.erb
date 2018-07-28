@@ -1,18 +1,25 @@
-<h2>頻出語(<%= @wordclass %>)</h2>
-<table>
-  <tr>
-    <th>形態素</th>
-    <th>数</th>
-  </tr>
-  <tbody>
-    <% @noun_and_count.keys.each do |key| %>
-      <tr>
-        <td><%= key %></td>
-        <td><%= @noun_and_count[key] %></td>
+<div class="row">
+  <div class="col-sm-6">
+    <h2 class="mt-3 mb-3">頻出語 (<%= @wordclass %>)</h2>
+    <table class="table-bordered w-100">
+      <tr class="table-active">
+        <th class="pl-2 pr-2 text-center w-50">形態素</th>
+        <th class="pl-2 pr-2 text-center w-50">数</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @noun_and_count.keys.each do |key| %>
+          <tr>
+            <td class="pl-2 pr-2 text-center"><%= key %></td>
+            <td class="pl-2 pr-2 text-center"><%= @noun_and_count[key] %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 
-<p>元テキスト</p>
-<%= @text %>
+  <div class="col-sm-6">
+    <h2 class="">元テキスト</h2>
+    <%= @text %>
+  </div>
+
+</div>
