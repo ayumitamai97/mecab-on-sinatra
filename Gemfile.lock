@@ -75,6 +75,7 @@ DEPENDENCIES
   bundler (= 1.16.2)
   mecab (= 0.996)
   pry
+  sass
   sinatra
   sinatra-asset-pipeline
   sinatra-contrib

@@ -4,6 +4,7 @@ require "sinatra/reloader"
 require "sinatra/asset_pipeline/task"
 require "mecab"
 require "pry"
+require "sass"
 require "sinatra/form_helpers"
 
 get "/" do
