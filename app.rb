@@ -2,7 +2,6 @@ require "rubygems"
 require "sinatra"
 require "sinatra/reloader"
 require "mecab"
-require "natto"
 require "pry"
 
 get "/" do
@@ -12,24 +11,20 @@ end
 post "/complete" do
   @text = params[:text]
   
-  natto = Natto::MeCab.new
-  nattos = []
+  tagger = MeCab::Tagger.new
+  words_arr = []
 
-  natto.parse(@text) do |n|
-    nattos << n.surface
-  end
 
-  @results = {}
+  mecab = MeCab::Tagger.new
+  node = mecab.parseToNode(@text)
+  @word_array = []
 
-  nattos.uniq.each do |surface|
-    @results[surface] = nattos.count(surface)
-  end
-
-#   @outputs = []
-
-#  results.keys.each do |key|
-#    @outputs << key + " => " + results[key].to_s
-#  end
+  begin
+    node = node.next
+    if /^名詞/ =~ node.feature.force_encoding("UTF-8")
+      @word_array << node.surface.force_encoding("UTF-8")
+    end
+  end until node.next.feature.include?("BOS/EOS")
 
   erb :complete
 end
