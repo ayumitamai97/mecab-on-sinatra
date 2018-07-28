@@ -1,6 +1,8 @@
 require "rubygems"
 require "sinatra"
 require "sinatra/reloader"
+require "sinatra/asset_pipeline/task"
+require "sinatra/static_assets"
 require "mecab"
 require "pry"
 
