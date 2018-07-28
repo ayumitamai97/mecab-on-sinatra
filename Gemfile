@@ -8,6 +8,6 @@ gem "natto"
 gem "pry"
 gem "sinatra-asset-pipeline"
 gem "sass"
+gem "sinatra-formhelpers-ng"
 
-source "http://gemcutter.org"
-gem "sinatra-static-assets"
+gem "sinatra-static-assets", source: "http://gemcutter.org"
