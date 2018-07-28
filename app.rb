@@ -25,7 +25,6 @@ post "/complete" do
   begin
     node = node.next
     if /^#{@wordclass}/ =~ node.feature.force_encoding("UTF-8")
-      binding.pry
       @noun_array << node.surface.force_encoding("UTF-8")
     end
   end until node.next.feature.include?("BOS/EOS")
