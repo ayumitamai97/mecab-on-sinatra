@@ -5,6 +5,7 @@ require "sinatra/asset_pipeline/task"
 require "sinatra/static_assets"
 require "mecab"
 require "pry"
+require "sass"
 
 get "/" do
   erb :index

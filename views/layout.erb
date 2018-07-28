@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <meata charset="urf-8">
+    <meta charset="utf-8">
     <title>sinatra test</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%= stylesheet_link_tag "css/bootstrap.min.css" %>
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/base.css">
   </head>
   <body>
-  <div class="container">
-    <h1>頻出語抽出</h1>
-    <%= yield %>
-  </div>
+    <header class="container mt-4 mb-2">
+      <h1 class="header-title">頻出語抽出</h1>
+    </header>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

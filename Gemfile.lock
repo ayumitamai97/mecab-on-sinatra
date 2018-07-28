@@ -80,6 +80,7 @@ DEPENDENCIES
   mecab (= 0.996)
   natto
   pry
+  sass
   sinatra
   sinatra-asset-pipeline
   sinatra-contrib

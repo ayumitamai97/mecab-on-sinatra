@@ -7,6 +7,7 @@ gem "mecab", "0.996"
 gem "natto"
 gem "pry"
 gem "sinatra-asset-pipeline"
+gem "sass"
 
 source "http://gemcutter.org"
 gem "sinatra-static-assets"
