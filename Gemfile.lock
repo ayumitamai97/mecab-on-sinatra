@@ -60,6 +60,7 @@ GEM
       rack-protection (= 2.0.3)
       sinatra (= 2.0.3)
       tilt (>= 1.3, < 3)
+    sinatra-formhelpers-ng (1.9.1)
     sinatra-static-assets (1.0.4)
       sinatra (>= 1.1.0)
     sprockets (3.7.2)
@@ -83,7 +84,8 @@ DEPENDENCIES
   sinatra
   sinatra-asset-pipeline
   sinatra-contrib
-  sinatra-static-assets
+  sinatra-formhelpers-ng
+  sinatra-static-assets!
 
 RUBY VERSION
    ruby 2.4.0p0
