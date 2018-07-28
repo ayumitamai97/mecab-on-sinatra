@@ -9,4 +9,5 @@ gem "pry"
 gem "sinatra-asset-pipeline"
 gem "sinatra-formhelpers-ng"
 
-gem "sinatra-static-assets", source: "http://gemcutter.org"
+source "http://gemcutter.org"
+gem "sinatra-static-assets"
