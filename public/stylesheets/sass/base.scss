@@ -1,3 +1,29 @@
+html, body, .container{
+  height: 100%;
+}
+
 .w-80{
   width: 80%;
+}
+
+.footer{
+  position: relative;
+  &__credit{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    padding: 30px;
+    background-color: #ddd;
+    text-align: center;
+    font-size: 0.7em;
+    color: #333;
+    &--link{
+      font-size: 0.7em;
+      color: #333;  
+      &:hover, &:focus, &:active{
+        color: #000; 
+      }
+    }
+  }
 }
