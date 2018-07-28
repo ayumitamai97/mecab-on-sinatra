@@ -12,19 +12,25 @@ post "/complete" do
   @text = params[:text]
   
   tagger = MeCab::Tagger.new
-  words_arr = []
-
 
   mecab = MeCab::Tagger.new
   node = mecab.parseToNode(@text)
-  @word_array = []
+  @noun_array = []
 
   begin
     node = node.next
     if /^名詞/ =~ node.feature.force_encoding("UTF-8")
-      @word_array << node.surface.force_encoding("UTF-8")
+      @noun_array << node.surface.force_encoding("UTF-8")
     end
   end until node.next.feature.include?("BOS/EOS")
+
+  @noun_array_uniq = @noun_array.uniq
+
+  @noun_and_count = {}
+
+  @noun_array_uniq.each do |noun|
+    @noun_and_count[noun] = @noun_array.count(noun)
+  end
 
   erb :complete
 end

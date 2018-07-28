@@ -1,5 +1,3 @@
-<%= @word_array %>
-
 <h1>頻出語(名詞)</h1>
 <table>
   <tr>
@@ -7,12 +5,12 @@
     <th>数</th>
   </tr>
   <tbody>
-    <%# @results.sort_by{|k,v| v }.reverse.each do |result| %>
+    <% @noun_and_count.keys.each do |key| %>
       <tr>
-        <td><%# result[0] %></td>
-        <td><%# result[1].to_s %></td>
+        <td><%= key %></td>
+        <td><%= @noun_and_count[key] %></td>
       </tr>
-    <%# end %>
+    <% end %>
   </tbody>
 </table>
 
