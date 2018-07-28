@@ -1,11 +1,12 @@
 require "rubygems"
 require "sinatra"
 require "sinatra/reloader"
-require "sinatra/asset_pipeline/task"
+require "sinatra/form_helpers"
 require "mecab"
 require "pry"
+require "sinatra/asset_pipeline/task"
 require "sass"
-require "sinatra/form_helpers"
+require 'sass/plugin/rack'
 
 get "/" do
   erb :index
