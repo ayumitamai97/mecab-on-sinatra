@@ -6,3 +6,7 @@ gem "sinatra-contrib"
 gem "mecab", "0.996"
 gem "natto"
 gem "pry"
+gem "sinatra-asset-pipeline"
+gem "sinatra-formhelpers-ng"
+
+gem "sinatra-static-assets", source: "http://gemcutter.org"

@@ -1,15 +1,19 @@
 require "rubygems"
 require "sinatra"
 require "sinatra/reloader"
+require "sinatra/asset_pipeline/task"
+require "sinatra/static_assets"
 require "mecab"
 require "pry"
+require "sinatra/form_helpers"
 
 get "/" do
   erb :index
 end
 
 post "/complete" do
-  @text = params[:text]
+  @text = params[:text][:content]
+  @wordclass = params[:text][:wordclass]
   
   tagger = MeCab::Tagger.new
 
@@ -19,7 +23,8 @@ post "/complete" do
 
   begin
     node = node.next
-    if /^名詞/ =~ node.feature.force_encoding("UTF-8")
+    if /^#{@wordclass}/ =~ node.feature.force_encoding("UTF-8")
+      binding.pry
       @noun_array << node.surface.force_encoding("UTF-8")
     end
   end until node.next.feature.include?("BOS/EOS")

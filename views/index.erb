@@ -1,7 +1,10 @@
-<html>
-  <body>
-    <form method="POST" action="complete">
-      テキストを入力してください：<textarea name="text" style="display: block; width: 600px; height: 200px;"></textarea>
-      <input type="submit" value="送信">
-  </body>
-</html>
+<%= form( "/complete", :post ) %>
+
+  テキストを入力してください
+    <div class="text_input">
+      <%= textarea :text, :content %>
+    <div>
+
+  <%= radio :text, :wordclass, %w(名詞 動詞 形容詞 副詞 助詞 助動詞 記号) %>
+
+<%= submit %>
