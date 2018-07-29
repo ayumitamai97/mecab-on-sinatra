@@ -20,7 +20,7 @@ post "/complete" do
   @text = params[:text][:content]
   
   if @text.empty?
-    flash[:hoge] = "テキストを入力してください。"
+    flash[:notice] = "テキストを入力してください。"
     redirect "/"
   end
 

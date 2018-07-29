@@ -31,12 +31,13 @@ html, body{
 }
 
 .footer{
-  &__credit{
+  margin: 0;
+  padding: 30px;
+  background-color: #ddd;
+  &__links{
+    margin: 0 auto 5px;
     bottom: 0;
     width: 100%;
-    margin: 0;
-    padding: 30px;
-    background-color: #ddd;
     text-align: center;
     color: #333;
     &--link{

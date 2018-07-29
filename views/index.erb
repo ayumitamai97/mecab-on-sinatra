@@ -1,4 +1,6 @@
-<p class="alert alert-warning"><%= flash[:hoge] %></p>
+<% unless flash[:notice].nil? %>
+  <p class="alert alert-warning"><%= flash[:notice] %></p>
+<% end %>
 
 <%= form( "/complete", :post ) %>
 
