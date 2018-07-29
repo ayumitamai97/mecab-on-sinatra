@@ -1,15 +1,23 @@
-html, body, .container{
+/************** override **************/
+
+html, body{
+  min-height: 100%;
   height: 100%;
 }
+
+.container{
+  min-height: calc( 100% - 124px );
+}
+
+
+/******************** original ********************/
 
 .w-80{
   width: 80%;
 }
 
 .footer{
-  position: relative;
   &__credit{
-    position: absolute;
     bottom: 0;
     width: 100%;
     margin: 0;

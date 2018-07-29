@@ -1,2 +1,2 @@
-html,body,.container{height:100%}.w-80{width:80%}.footer{position:relative}.footer__credit{position:absolute;bottom:0;width:100%;margin:0;padding:30px;background-color:#ddd;text-align:center;font-size:0.7em;color:#333}.footer__credit--link{font-size:0.7em;color:#333}.footer__credit--link:hover,.footer__credit--link:focus,.footer__credit--link:active{color:#000}
+html,body{min-height:100%;height:100%}.container{min-height:calc( 100% - 124px )}.w-80{width:80%}.footer__credit{bottom:0;width:100%;margin:0;padding:30px;background-color:#ddd;text-align:center;font-size:0.7em;color:#333}.footer__credit--link{font-size:0.7em;color:#333}.footer__credit--link:hover,.footer__credit--link:focus,.footer__credit--link:active{color:#000}
 /*# sourceMappingURL=base.css.map */
