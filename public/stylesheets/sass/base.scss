@@ -12,8 +12,22 @@ html, body{
 
 /******************** original ********************/
 
-.w-80{
-  width: 80%;
+
+.fs-08{
+  font-size: 0.8em;
+}
+
+.text-input-area{
+  min-height: 200px;
+  width: 100%;
+}
+
+.wordclass-select-area{
+  padding: 10px;
+  height: 30px;
+  width: 100px;
+  background: none transparent;
+  vertical-align: middle;
 }
 
 .footer{
@@ -24,10 +38,8 @@ html, body{
     padding: 30px;
     background-color: #ddd;
     text-align: center;
-    font-size: 0.7em;
     color: #333;
     &--link{
-      font-size: 0.7em;
       color: #333;  
       &:hover, &:focus, &:active{
         color: #000; 
