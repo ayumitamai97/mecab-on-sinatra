@@ -14,9 +14,9 @@ end
 
 post "/complete" do
   @text = params[:text][:content]
-  @wordclass = params[:text][:wordclass]
   
-  tagger = MeCab::Tagger.new
+  wordclass = params[:text][:wordclass]
+  @wordclass = wordclass == "未選択" ? nil : wordclass
 
   mecab = MeCab::Tagger.new
   node = mecab.parseToNode(@text)
