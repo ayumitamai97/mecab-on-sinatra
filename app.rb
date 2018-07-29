@@ -7,6 +7,10 @@ require "pry"
 require "sinatra/asset_pipeline/task"
 require "sass"
 require 'sass/plugin/rack'
+require "rack-flash"
+require "rack/flash/test"
+
+use Rack::Flash
 
 get "/" do
   erb :index
@@ -15,6 +19,11 @@ end
 post "/complete" do
   @text = params[:text][:content]
   
+  if @text.empty?
+    flash[:hoge] = "テキストを入力してください。"
+    redirect "/"
+  end
+
   wordclass = params[:text][:wordclass]
   @wordclass = wordclass == "未選択" ? nil : wordclass
 
