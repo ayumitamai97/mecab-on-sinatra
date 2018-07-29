@@ -48,42 +48,37 @@ get "/" do
 end
 
 post "/freq" do
-  @text = params[:freq][:content]
   wordclass = params[:freq][:wordclass]
   @wordclass = wordclass == "未選択" ? nil : wordclass
+  @text = params[:freq][:content]
 
   raise_error_when_empty
 
-
-  mecab_freq(@text)
-  
+  mecab_freq(@text)  
   erb :freq
 end
 
 post "/cooccur" do
-  @word = params[:cooc][:word]
-  @text = params[:cooc][:base]
   wordclass = params[:cooc][:wordclass]
   @wordclass = wordclass == "未選択" ? nil : wordclass
+  @word = params[:cooc][:word]
+  @text = params[:cooc][:base]
+
   raise_error_when_empty
   
   trials = @text.length / 60
-  puts trials
   where_to_split_from = [0, 20, 40]
   @word_and_logs = {}
   
   where_to_split_from.each do |split| # 60字ごとの区切り位置を3回調整することで精度向上
     for trial in 1..trials do # 60字ごとに区切る
-      puts trial
       first_char_index = ( trial - 1 ) * 60 + 1 * split
       last_char_index  = trial * 60 + split
       @text.slice!(first_char_index, last_char_index)
       
-      if @text.include?(@word)
-        
+      if @text.include?(@word)        
         mecab_freq(@text)
         freq_words = @word_and_count.keys
-        
         freq_words.each do |key| 
           @word_and_count[key] = Math.log(@word_and_count[key])
         end 
@@ -101,4 +96,5 @@ post "/cooccur" do
       val == 0 || key.include?(@word) }
 
   erb :cooccur
+
 end
