@@ -6,7 +6,7 @@
     </div>
     <table class="table-bordered w-100">
       <tr class="table-active">
-        <th class="pl-2 pr-2 text-center w-50">形態素 (<%= @wordclass %>)</th>
+        <th class="pl-2 pr-2 text-center w-50">形態素 <%= "(" + @wordclass + ")" unless @wordclass.nil? %></th>
         <th class="pl-2 pr-2 text-center w-50">数</th>
       </tr>
       <tbody>
