@@ -61,13 +61,12 @@ post "/freq" do
 end
 
 post "/cooccur" do
-  @word = "中国"
-  @text = params[:cooc][:content]
+  @word = params[:cooc][:word]
+  @text = params[:cooc][:base]
   wordclass = params[:cooc][:wordclass]
   @wordclass = wordclass == "未選択" ? nil : wordclass
-
   raise_error_when_empty
-
+  
   trials = @text.length / 60
   puts trials
   where_to_split_from = [0, 20, 40]
@@ -79,27 +78,27 @@ post "/cooccur" do
       first_char_index = ( trial - 1 ) * 60 + 1 * split
       last_char_index  = trial * 60 + split
       @text.slice!(first_char_index, last_char_index)
-
-      if @text.include?("中国")
       
+      if @text.include?(@word)
+        
         mecab_freq(@text)
         freq_words = @word_and_count.keys
-
+        
         freq_words.each do |key| 
           @word_and_count[key] = Math.log(@word_and_count[key])
         end 
-      
+        
         @word_and_logs.merge!(@word_and_count) do | key, existingval, newval |
           @word_and_logs.keys.include?(freq_words) ? existingval + newval : newval
         end
       end
-
+      
     end
   end
 
   @word_and_logs = 
     Hash[ @word_and_logs.sort_by{ |_, v| -v } ].delete_if{ |key, val| 
-      val == 0 || key.include?("中国") }
+      val == 0 || key.include?(@word) }
 
   erb :cooccur
 end

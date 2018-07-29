@@ -17,9 +17,13 @@ html, body{
   font-size: 0.8em;
 }
 
-.text-input-area{
+.texts-input-area{
   min-height: 200px;
   width: 100%;
+}
+
+.word-input-area{
+  border: 1px solid #6c757d !important;
 }
 
 .wordclass-select-area{
