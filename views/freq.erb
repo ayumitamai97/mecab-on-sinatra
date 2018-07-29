@@ -10,10 +10,10 @@
         <th class="pl-2 pr-2 text-center w-50">数</th>
       </tr>
       <tbody>
-        <% @noun_and_count.keys.each do |key| %>
+        <% @word_and_count.keys.each do |key| %>
           <tr>
             <td class="pl-2 pr-2 text-center"><%= key %></td>
-            <td class="pl-2 pr-2 text-center"><%= @noun_and_count[key] %></td>
+            <td class="pl-2 pr-2 text-center"><%= @word_and_count[key] %></td>
           </tr>
         <% end %>
       </tbody>
