@@ -1,9 +1,10 @@
 <%= form( "/complete", :post ) %>
 
   <p class="mt-2 mb-1">テキストを入力してください。</p>
-  <%= textarea :text, :content, "", class: "rounded w-80" %>
+  <%= textarea :text, :content, "", { class: "rounded border-secondary text-input-area" } %>
 
-  <p class="mt-2 mb-1">抽出する品詞を選んでください。</p>
-  <%= radio :text, :wordclass, %w(未選択 名詞 動詞 形容詞 副詞 助詞 助動詞 記号) %>
+  <p class="mt-3 mb-1">抽出する品詞を選んでください。</p>
+  <p class="mb-2 fs-08">※品詞を選択しない場合、全ての品詞を抽出します。</p>
+  <%= select :text, :wordclass, %w(未選択 名詞 動詞 形容詞 副詞 助詞 助動詞 記号), class: "wordclass-select-area mb-3" %>
 
-<%= submit "抽出", class: "d-block mt-2" %>
+<%= submit "抽出", class: "d-block mt-2 btn btn-dark" %>
